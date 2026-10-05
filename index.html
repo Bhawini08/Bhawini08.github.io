@@ -1,448 +1,772 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>Bhawini Singh</title>
-<style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root {
-    --bg: #0F0F10;
-    --card: #2C2F33;
-    --accent: #3E8FFF;
-    --accent-light: #0d1e36;
-    --border: rgba(62,143,255,0.15);
-    --deep: #e8ecf0;
-    --mid: #8a9ab0;
-    --muted: #5c6e82;
-    --radius: 14px;
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>Bhawini Singh | Investment Research &amp; Quantitative Finance</title>
+
+<meta content="Bhawini Singh is an M.S. Quantitative Finance candidate at Northeastern University working across investment research, portfolio construction, systematic modeling, and risk analysis." name="description"/><meta content="website" property="og:type"/><meta content="Bhawini Singh | Investment Research &amp; Quantitative Finance" property="og:title"/><meta content="Investment research, portfolio construction, systematic modeling, and quantitative finance." property="og:description"/><meta content="summary_large_image" name="twitter:card"/><meta content="Bhawini Singh | Investment Research &amp; Quantitative Finance" name="twitter:title"/><meta content="Investment research, portfolio construction, systematic modeling, and quantitative finance." name="twitter:description"/><link href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%231A2536'/%3E%3Ctext x='32' y='43' text-anchor='middle' font-family='Georgia,serif' font-size='34' fill='%23F3EFE6'%3EBS%3C/text%3E%3C/svg%3E" rel="icon"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&amp;family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&amp;display=swap" rel="stylesheet"/><style>
+:root{
+  --ivory:#F3EFE6;
+  --paper:#FBF8F1;
+  --onyx:#1A1A1A;
+  --charcoal:#2B2B2B;
+  --slate:#4B4B49;
+  --midnight:#1A2536;
+  --teal:#1E4D52;
+  --sienna:#7C4A21;
+  --rule:#C9C0B3;
+  --rule-strong:#9F9587;
+  --display:"Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --body:"Source Serif 4", Georgia, "Times New Roman", serif;
+  --max:1180px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;background:var(--ivory)}
+body{margin:0;background:var(--ivory);color:var(--charcoal);font-family:var(--body);font-size:17px;line-height:1.55}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+a{color:var(--teal);text-decoration:none;transition:color .18s ease}
+a:hover{color:var(--midnight)}
+img{max-width:100%;height:auto}
+.wrap{width:min(var(--max),calc(100% - 64px));margin:0 auto}
+section{padding:104px 0}
+h1,h2,h3,p{margin-top:0}
+h1,h2,h3,.principle{font-family:var(--display);color:var(--onyx);font-weight:500}
+h2{font-size:clamp(3.7rem,7vw,7rem);line-height:.88;letter-spacing:-.035em;margin-bottom:34px}
+.eyebrow{font-size:.77rem;line-height:1;text-transform:uppercase;letter-spacing:.18em;color:var(--midnight);font-weight:600;margin-bottom:26px}
+.muted{color:var(--slate)}
+::selection{background:#CBD8D5;color:var(--onyx)}
+#research,#experience,#about{scroll-margin-top:64px}
+
+/* Navigation */
+.site-nav{position:fixed;z-index:1000;top:0;left:0;right:0;height:48px;padding:0 clamp(20px,4vw,58px);display:flex;align-items:center;justify-content:space-between;background:rgba(243,239,230,.94);border-bottom:1px solid rgba(159,149,135,.5);backdrop-filter:blur(10px)}
+.site-nav-name{font-family:var(--display);font-size:1.05rem;color:var(--onyx)}
+.site-nav-links{display:flex;gap:clamp(14px,2.2vw,28px)}
+.site-nav-links a{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--midnight)}
+
+/* Hero */
+.hero{min-height:100svh;padding:clamp(110px,13vh,150px) 0 70px;display:flex;align-items:center}
+.hero .wrap{width:min(var(--max),calc(100% - 64px))}
+.hero h1{font-size:clamp(6rem,13vw,12rem);line-height:.68;letter-spacing:-.055em;margin:0 0 62px;max-width:980px}
+.hero-copy{max-width:1000px}
+.hero-copy>p{font-family:var(--display);font-size:clamp(1.7rem,2.6vw,2.45rem);line-height:1.3;color:var(--onyx);max-width:970px}
+.hero-meta{display:flex;gap:70px;margin:70px 0 58px}
+.hero-meta span{min-width:270px;padding-top:16px;border-top:1px solid var(--teal);font-size:.78rem;text-transform:uppercase;letter-spacing:.13em;color:var(--midnight)}
+.hero-pills{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.hero-pill{padding:17px 20px 0;border-top:1px solid var(--rule);font-family:var(--display);font-size:1.35rem;color:var(--midnight)}
+.scroll{display:inline-block;margin-top:52px;font-size:.78rem;text-transform:uppercase;letter-spacing:.12em;color:var(--teal)}
+
+/* Approach */
+.approach-top{max-width:780px;margin-bottom:54px}
+.approach-top p:last-child{font-family:var(--display);font-size:1.65rem;line-height:1.35;color:var(--charcoal)}
+.process{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.step{min-height:225px;padding:22px 20px 24px;background:rgba(251,248,241,.72);border:1px solid var(--rule);border-radius:3px;box-shadow:0 8px 24px rgba(26,37,54,.045);transition:transform .22s,border-color .22s,box-shadow .22s}
+.step:hover{transform:translateY(-3px);border-color:var(--teal);box-shadow:0 14px 30px rgba(26,37,54,.08)}
+.step .n{display:block;color:var(--sienna);font-size:.75rem;letter-spacing:.13em}
+.step b{display:block;margin-top:48px;color:var(--midnight);font-family:var(--display);font-size:1.25rem;font-weight:600}
+.step p{margin:10px 0 0;color:var(--charcoal);font-size:.98rem}
+
+/* Research */
+.project-intro{max-width:760px;font-size:1.08rem;color:var(--charcoal);margin-bottom:48px}
+.project-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.project-card{position:relative;text-align:left;min-height:290px;padding:34px 32px;background:var(--paper);border:1px solid var(--rule);border-radius:4px;box-shadow:0 8px 25px rgba(26,37,54,.055);overflow:hidden;transition:transform .22s,border-color .22s,box-shadow .22s}
+.project-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--teal);opacity:.72}
+.project-card:hover{transform:translateY(-4px);border-color:var(--teal);box-shadow:0 16px 34px rgba(26,37,54,.09)}
+.project-card .tag{display:block;color:var(--sienna);font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;margin-bottom:42px}
+.project-card h3{font-size:2.15rem;line-height:1;margin-bottom:18px;color:var(--midnight)}
+.project-card p{font-size:.97rem;color:var(--charcoal);margin-bottom:30px}
+.project-open{font-size:.75rem;text-transform:uppercase;letter-spacing:.09em;color:var(--teal);border-bottom:1px solid rgba(30,77,82,.35)}
+.project-detail{display:none;margin-top:18px;padding:38px;background:var(--paper);border:1px solid var(--rule)}
+.project-detail.active{display:block}
+.project-detail h3{font-size:2.5rem;color:var(--midnight)}
+.project-detail p{color:var(--charcoal)}
+
+/* Research Lab */
+.lab-grid{display:grid;grid-template-columns:minmax(280px,.75fr) minmax(0,1.55fr);gap:70px;align-items:start}
+.lab-grid>div:first-child>p:not(.eyebrow){font-family:var(--display);font-size:1.45rem;line-height:1.45;color:var(--charcoal)}
+.lab-repo-link{display:inline-block;margin-top:32px;font-weight:600}
+.lab-panel{padding:34px;background:var(--paper);border:1px solid var(--rule-strong);border-radius:5px;box-shadow:0 14px 38px rgba(26,37,54,.08)}
+.lab-topline{display:flex;justify-content:space-between;padding-bottom:18px;border-bottom:1px solid var(--rule);font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--teal)}
+.regime-controls{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:20px 0 32px}
+.regime-btn{padding:13px 10px;background:#F6F1E8;color:var(--midnight);border:1px solid var(--rule)}
+.regime-btn.active,.regime-btn:hover{background:var(--midnight);color:#fff;border-color:var(--midnight);box-shadow:0 5px 14px rgba(26,37,54,.13)}
+.regime-state-label,.universe-block>span,.model-cell small{display:block;color:var(--teal);font-size:.7rem;text-transform:uppercase;letter-spacing:.11em;margin-bottom:8px}
+.regime-state h3{font-size:2rem;line-height:1.05;color:var(--midnight);margin-bottom:12px}
+.regime-state p,.model-cell p,.lab-note{color:var(--charcoal);font-size:.91rem}
+.model-grid{display:grid;grid-template-columns:1fr 1fr;margin:28px 0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.model-cell{padding:22px 18px;border-right:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.model-cell:nth-child(2n){border-right:0}
+.model-cell:nth-last-child(-n+2){border-bottom:0}
+.model-cell strong{display:block;color:var(--midnight);font-family:var(--display);font-size:1.2rem;margin-bottom:8px}
+.asset-chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+.asset-chips i{font-style:normal;padding:5px 9px;background:#F6F1E8;color:var(--midnight);border:1px solid var(--rule-strong);font-size:.75rem}
+.lab-note{padding-top:18px;margin:20px 0 0;border-top:1px solid var(--rule);font-size:.78rem}
+
+/* Timeline desktop */
+.timeline-legend{display:flex;gap:22px;margin:24px 0 36px;font-size:.78rem;color:var(--slate)}
+.legend-mark{display:flex;align-items:center;gap:8px}
+.legend-mark::before{content:"";width:9px;height:9px;border-radius:50%;background:var(--midnight)}
+.legend-mark.internship::before{background:var(--teal)}
+.legend-mark.investment::before{background:var(--sienna)}
+.timeline-shell{padding:30px 0 10px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.timeline-canvas{position:relative;height:560px}
+.time-axis{position:absolute;left:2%;right:2%;top:225px;height:1px;background:var(--teal)}
+.year-marker{position:absolute;top:202px;font-size:.73rem;color:var(--slate)}
+.y2022{left:2%}.y2023{left:25%}.y2024{left:48%}.y2025{left:71%}.y2026{right:2%}
+.academic-band,.investment-node,.timeline-card{position:absolute;text-align:left;transition:transform .2s,border-color .2s,box-shadow .2s}
+.academic-band{top:70px;padding:15px 18px;background:var(--midnight);color:#fff;border:1px solid var(--midnight)}
+.academic-band strong,.academic-band small{display:block;color:#fff}
+.christ-band{left:2%;width:66%}.neu-band{left:70%;width:28%}
+.investment-node{top:150px;left:72.5%;width:25.5%;padding:9px 12px;background:var(--paper);border:1px solid var(--teal);color:var(--onyx)}
+.investment-node strong,.investment-node small{display:block}.investment-node small{color:var(--teal)}
+.timeline-card{width:15.5%;min-height:128px;padding:14px;background:var(--paper);border:1px solid var(--rule);color:var(--onyx)}
+.timeline-card strong,.timeline-card small{display:block}.timeline-card small{color:var(--slate);margin-top:5px}
+.timeline-card:hover,.investment-node:hover{transform:translateY(-2px);border-color:var(--teal);box-shadow:0 10px 24px rgba(26,37,54,.075)}
+.tc1{left:14%;top:285px}.tc2{left:31%;top:360px}.tc3{left:48%;top:285px}.tc4{left:64%;top:360px}.tc5{left:78%;top:285px}.tc6{right:1%;top:420px}
+.case-study{display:none;margin-top:28px;padding:38px;background:var(--paper);border:1px solid var(--rule)}
+.case-study.active{display:block}
+.case-study h3{font-size:2.5rem;color:var(--midnight)}
+
+/* How I Think */
+.think .eyebrow{margin-bottom:20px}
+.principle{padding:10px 0 18px;border-top:1px solid var(--rule);font-size:clamp(4.2rem,7.6vw,7.8rem);line-height:.84;letter-spacing:-.035em;color:#5B5A57;opacity:.72;transition:color .28s,opacity .28s,transform .28s,padding-left .28s,border-color .28s}
+.principle:hover{color:var(--onyx);opacity:1;transform:translateX(5px);padding-left:5px;border-color:var(--rule-strong)}
+
+/* About */
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:90px}
+.about-copy p{font-family:var(--display);font-size:1.42rem;line-height:1.45;color:var(--charcoal)}
+.personal{margin-top:34px;padding-top:24px;border-top:1px solid var(--rule);color:var(--slate)}
+
+/* Capabilities */
+.cap-grid{display:grid;grid-template-columns:1fr 1fr}
+.cap-row{padding:30px 0;border-top:1px solid var(--rule)}
+.cap-row:nth-child(odd){padding-right:55px}.cap-row:nth-child(even){padding-left:55px}
+.cap-row h3{font-size:1.7rem;color:var(--midnight);margin-bottom:12px}
+.cap-stack{color:var(--teal);font-size:.85rem;font-weight:600;letter-spacing:.045em;line-height:1.75;text-transform:uppercase}
+
+/* Contact */
+.contact{padding-bottom:70px}
+.contact-card{padding-top:44px;border-top:1px solid var(--rule)}
+.contact-card h2{max-width:900px}
+.contact-card>p{max-width:720px;font-size:1.08rem}
+.links{display:flex;flex-wrap:wrap;gap:28px;margin-top:38px}
+.links a{font-size:.8rem;text-transform:uppercase;letter-spacing:.1em;font-weight:600}
+
+/* Mobile */
+@media(max-width:760px){
+  body{font-size:16px}
+  .wrap,.hero .wrap{width:min(100% - 34px,var(--max))}
+  section{padding:74px 0}
+  h2{font-size:clamp(3.2rem,16vw,5rem)}
+  .site-nav{height:44px;padding:0 16px}
+  .site-nav-name{display:none}
+  .site-nav-links{width:100%;justify-content:space-between;gap:8px}
+  .site-nav-links a{font-size:.62rem;letter-spacing:.06em}
+  .hero{min-height:auto;padding:110px 0 68px}
+  .hero h1{font-size:clamp(5rem,25vw,8rem);line-height:.72;margin-bottom:44px}
+  .hero-copy>p{font-size:1.65rem}
+  .hero-meta{display:grid;gap:22px;margin:46px 0}
+  .hero-meta span{min-width:0}
+  .hero-pills{grid-template-columns:1fr}
+  .process,.project-cards,.lab-grid,.about-grid,.cap-grid{grid-template-columns:1fr}
+  .step{min-height:0}.step b{margin-top:28px}
+  .lab-grid{gap:42px}
+  .regime-controls{grid-template-columns:1fr}
+  .model-grid{grid-template-columns:1fr}
+  .model-cell{border-right:0!important;border-bottom:1px solid var(--rule)!important}
+  .model-cell:last-child{border-bottom:0!important}
+  .cap-row:nth-child(n){padding:25px 0}
+
+  /* Dedicated vertical timeline */
+  .timeline-shell{padding:24px 0}
+  .timeline-canvas{height:auto;display:flex;flex-direction:column;gap:12px;padding-left:24px;border-left:1px solid var(--teal)}
+  .time-axis,.year-marker{display:none}
+  .academic-band,.investment-node,.timeline-card{position:relative!important;left:auto!important;right:auto!important;top:auto!important;width:100%!important;min-height:0!important;padding:16px 18px!important}
+  .academic-band::before,.investment-node::before,.timeline-card::before{content:"";position:absolute;left:-30px;top:23px;width:11px;height:11px;border-radius:50%;background:var(--ivory);border:2px solid var(--teal)}
+  .academic-band::before{border-color:var(--midnight)}
+  .investment-node::before{border-color:var(--sienna)}
+  .christ-band{order:1}.tc1{order:2}.tc2{order:3}.tc3{order:4}.neu-band{order:5}.tc4{order:6}.huntington-node{order:7}.tc5{order:8}.tc6{order:9}
+  .timeline-legend{flex-wrap:wrap}
+  .principle{font-size:clamp(3.4rem,15vw,5.2rem);line-height:.88}
+  .principle:hover{transform:none;padding-left:0}
+  .about-grid{gap:36px}
+}
+@media(max-width:430px){
+  .project-card,.project-detail,.case-study,.lab-panel{padding:25px 22px}
+  .hero h1{font-size:23vw}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important;animation:none!important}
+}
+
+/* Dynamically rendered project / experience detail layouts */
+.project-detail-head,.case-head{display:grid;grid-template-columns:.8fr 1.2fr;gap:55px;align-items:start}
+.project-detail-head h3,.case-head h3{font-size:2.8rem;line-height:1;color:var(--midnight);margin-bottom:0}
+.project-detail-head>p,.case-head>p{font-size:1.05rem;color:var(--charcoal)}
+.project-detail-grid,.case-columns{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:34px;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+.project-detail-block,.case-block{padding:25px 24px 25px 0;border-bottom:1px solid var(--rule)}
+.project-detail-block:nth-child(odd),.case-block:nth-child(odd){padding-right:32px;border-right:1px solid var(--rule)}
+.project-detail-block:nth-child(even),.case-block:nth-child(even){padding-left:32px}
+.project-detail-block:nth-last-child(-n+2),.case-block:nth-last-child(-n+2){border-bottom:0}
+.project-detail-block h4,.case-block h4{margin:0 0 8px;font-family:var(--display);font-size:1.25rem;color:var(--midnight)}
+.project-detail-block p,.case-block p{margin:0;color:var(--charcoal);font-size:.95rem}
+.project-detail-footer{display:flex;justify-content:space-between;gap:25px;align-items:center;margin-top:24px}
+.project-methods,.skill-stack{margin-top:24px;color:var(--teal);font-size:.78rem;font-weight:600;letter-spacing:.04em;line-height:1.6}
+.github-project-link{white-space:nowrap;font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em}
+.close-project,.close-case{margin-top:28px;padding:10px 15px;background:transparent;border:1px solid var(--rule-strong);color:var(--midnight)}
+.close-project:hover,.close-case:hover{background:var(--midnight);border-color:var(--midnight);color:#fff}
+@media(max-width:760px){
+ .project-detail-head,.case-head{grid-template-columns:1fr;gap:14px}
+ .project-detail-grid,.case-columns{grid-template-columns:1fr}
+ .project-detail-block:nth-child(n),.case-block:nth-child(n){padding:20px 0;border-right:0;border-bottom:1px solid var(--rule)}
+ .project-detail-block:last-child,.case-block:last-child{border-bottom:0}
+ .project-detail-footer{display:block}
+ .github-project-link{display:inline-block;margin-top:18px}
+}
+
+
+/* =========================================================
+   PRODUCTION V2 - CONTACT CONTRAST + CALMER DESKTOP TIMELINE
+   ========================================================= */
+.contact-copy{
+  max-width:680px!important;
+  color:var(--charcoal)!important;
+  -webkit-text-fill-color:var(--charcoal)!important;
+  opacity:1!important;
+  font-family:var(--display);
+  font-size:1.28rem!important;
+  line-height:1.45;
+}
+
+/* Desktop experience timeline: two deliberate lanes, no staggered scatter */
+@media(min-width:761px){
+  .timeline-shell{padding:26px 0 34px}
+  .timeline-legend{margin:0 0 34px}
+
+  .timeline-canvas{
+    position:relative;
+    height:500px;
+    display:grid;
+    grid-template-columns:repeat(12,1fr);
+    grid-template-rows:112px 54px 190px;
+    column-gap:12px;
+    row-gap:30px;
+    align-items:start;
   }
-  html { scroll-behavior: smooth; }
-  body { font-family: Georgia, 'Times New Roman', serif; background: var(--bg); color: var(--deep); line-height: 1.7; font-size: 16px; }
 
-  nav { position: sticky; top: 0; z-index: 100; background: rgba(15,15,16,0.95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; }
-  .nav-name { font-size: 15px; font-weight: 600; letter-spacing: 0.05em; color: var(--deep); text-decoration: none; font-family: Garamond, Georgia, serif; }
-  .nav-links { display: flex; gap: 2rem; list-style: none; }
-  .nav-links a { font-size: 13px; font-family: Garamond, Georgia, serif; color: var(--mid); text-decoration: none; letter-spacing: 0.04em; transition: color 0.2s; }
-  .nav-links a:hover { color: var(--accent); }
-
-  .hero { max-width: 860px; margin: 0 auto; padding: 90px 2rem 70px; }
-  .hero-name { font-family: 'Times New Roman', Georgia, serif; font-size: clamp(2.8rem, 6vw, 4.2rem); font-weight: 400; color: var(--deep); margin-bottom: 10px; letter-spacing: 0.01em; }
-  .hero-tag { display: inline-block; font-family: Garamond, Georgia, serif; font-size: 13px; letter-spacing: 0.1em; color: var(--accent); background: var(--accent-light); padding: 4px 14px; border-radius: 20px; margin-bottom: 22px; border: 1px solid rgba(62,143,255,0.2); }
-  .hero-sub { font-size: 17px; color: var(--mid); max-width: 620px; font-family: Garamond, Georgia, serif; line-height: 1.7; }
-
-  section { max-width: 860px; margin: 0 auto; padding: 64px 2rem; border-top: 1px solid var(--border); }
-  .section-label { font-family: Garamond, Georgia, serif; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
-  .section-title { font-size: 1.75rem; font-weight: 400; color: var(--deep); margin-bottom: 10px; font-family: 'Times New Roman', Georgia, serif; }
-  .section-summary { font-size: 14.5px; color: var(--mid); font-family: Garamond, Georgia, serif; margin-bottom: 32px; max-width: 640px; line-height: 1.65; }
-
-  .about-text p { color: var(--mid); margin-bottom: 14px; font-size: 15px; font-family: Garamond, Georgia, serif; }
-  .about-text p:last-child { margin-bottom: 0; }
-
-  .timeline { display: flex; flex-direction: column; gap: 10px; }
-  .exp-item { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 24px; transition: border-color 0.2s; }
-  .exp-item:hover { border-color: var(--accent); }
-  .exp-header { display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; margin-bottom: 3px; }
-  .exp-role { font-size: 15px; font-weight: 600; color: var(--deep); font-family: Baskerville, 'Times New Roman', Georgia, serif; }
-  .exp-date { font-size: 12px; color: var(--muted); font-family: Garamond, Georgia, serif; white-space: nowrap; margin-top: 3px; }
-  .exp-org { font-size: 13px; color: var(--accent); font-family: Garamond, Georgia, serif; margin-bottom: 10px; }
-  .exp-bullets { margin: 6px 0 0 16px; }
-  .exp-bullets li { font-size: 13.5px; color: var(--mid); line-height: 1.6; font-family: Garamond, Georgia, serif; margin-bottom: 5px; }
-  .exp-bullets li b { color: var(--deep); font-weight: 600; }
-  .exp-desc { font-size: 13.5px; color: var(--mid); font-family: Garamond, Georgia, serif; line-height: 1.6; }
-
-  .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 32px; }
-  .edu-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px 20px; }
-  .edu-deg { font-size: 14px; font-weight: 600; color: var(--deep); font-family: Baskerville, 'Times New Roman', Georgia, serif; }
-  .edu-school { font-size: 13px; color: var(--accent); font-family: Garamond, Georgia, serif; margin: 4px 0 4px; }
-  .edu-meta { font-size: 12px; color: var(--muted); font-family: Garamond, Georgia, serif; line-height: 1.6; }
-  .edu-courses { font-size: 12px; color: var(--mid); font-family: Garamond, Georgia, serif; margin-top: 6px; line-height: 1.55; }
-
-  .projects-list { display: flex; flex-direction: column; gap: 12px; }
-  .project-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: border-color 0.2s; }
-  .project-card:hover { border-color: var(--accent); }
-  .proj-summary { padding: 20px 24px; display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; cursor: pointer; }
-  .proj-left { flex: 1; }
-  .proj-title { font-size: 15px; font-weight: 600; color: var(--deep); font-family: Baskerville, 'Times New Roman', Georgia, serif; margin-bottom: 4px; }
-  .proj-oneliner { font-size: 13px; color: var(--mid); font-family: Garamond, Georgia, serif; line-height: 1.5; }
-  .proj-right { display: flex; flex-direction: column; align-items: flex-end; gap: 8px; flex-shrink: 0; }
-  .proj-tools { font-size: 11px; color: var(--accent); font-family: Garamond, Georgia, serif; letter-spacing: 0.03em; text-align: right; }
-  .proj-toggle { font-size: 11px; color: var(--muted); font-family: Garamond, Georgia, serif; border: 1px solid var(--border); border-radius: 4px; padding: 2px 8px; white-space: nowrap; transition: color 0.2s, border-color 0.2s; }
-  .proj-toggle:hover { color: var(--accent); border-color: var(--accent); }
-  .proj-details { display: none; padding: 0 24px 20px; border-top: 1px solid var(--border); }
-  .proj-details.open { display: block; }
-  .proj-sections { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; padding-top: 16px; }
-  .proj-subhead { font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--muted); font-family: Garamond, Georgia, serif; margin-bottom: 4px; }
-  .proj-body { font-size: 13px; color: var(--mid); line-height: 1.6; font-family: Garamond, Georgia, serif; }
-  .proj-link { display: inline-block; margin-top: 14px; font-size: 12.5px; font-family: Garamond, Georgia, serif; color: var(--accent); text-decoration: none; border-bottom: 1px solid rgba(62,143,255,0.4); padding-bottom: 1px; }
-  .proj-link:hover { color: #7ab5ff; border-color: #7ab5ff; }
-
-  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
-  .contact-text p { color: var(--mid); font-size: 15px; margin-bottom: 12px; font-family: Garamond, Georgia, serif; }
-  .contact-text p:last-child { margin-bottom: 0; }
-  .avail-tag { display: inline-block; font-size: 12px; font-family: Garamond, Georgia, serif; color: var(--accent); background: var(--accent-light); border: 1px solid rgba(62,143,255,0.2); padding: 4px 12px; border-radius: 20px; margin-top: 12px; }
-  .contact-links { display: flex; flex-direction: column; gap: 10px; }
-  .contact-item { display: flex; align-items: center; gap: 14px; background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 13px 18px; text-decoration: none; transition: border-color 0.2s; }
-  .contact-item:hover { border-color: var(--accent); }
-  .contact-icon { width: 30px; height: 30px; background: var(--accent-light); border-radius: 7px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-  .contact-icon svg { width: 15px; height: 15px; stroke: var(--accent); fill: none; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-  .contact-lbl { font-size: 13px; font-weight: 600; font-family: Garamond, Georgia, serif; color: var(--deep); }
-  .contact-val { font-size: 12px; color: var(--muted); font-family: Garamond, Georgia, serif; }
-
-  footer { border-top: 1px solid var(--border); padding: 24px 2rem; max-width: 860px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; }
-  footer p { font-size: 12px; color: var(--muted); font-family: Garamond, Georgia, serif; }
-
-  @media (max-width: 640px) {
-    .edu-grid, .contact-grid { grid-template-columns: 1fr; }
-    .proj-sections { grid-template-columns: 1fr; }
-    .proj-summary { flex-direction: column; gap: 8px; }
-    .proj-right { align-items: flex-start; flex-direction: row; }
-    .exp-header { flex-direction: column; gap: 2px; }
-    .hero { padding: 60px 1.5rem 50px; }
+  /* academic lane */
+  .academic-band{
+    position:relative!important;
+    left:auto!important;right:auto!important;top:auto!important;
+    width:auto!important;
+    height:106px;
+    padding:20px 22px;
+    overflow:hidden;
   }
+  .christ-band{grid-column:1 / 9;grid-row:1}
+  .neu-band{grid-column:9 / 13;grid-row:1}
+
+  /* single clean year axis */
+  .time-axis{
+    position:absolute;
+    left:0;right:0;top:153px;
+    height:1px;background:var(--teal);
+  }
+  .year-marker{top:129px}
+  .y2022{left:0}.y2023{left:24%}.y2024{left:48%}.y2025{left:72%}.y2026{right:0}
+
+  /* Huntington sits in its own investment-experience lane,
+     aligned beneath Northeastern rather than overlapping it. */
+  .investment-node{
+    position:relative!important;
+    left:auto!important;right:auto!important;top:auto!important;
+    width:auto!important;
+    grid-column:9 / 13;
+    grid-row:2;
+    min-height:64px;
+    padding:11px 16px;
+    z-index:3;
+    align-self:start;
+  }
+
+  /* internships form one consistent row */
+  .timeline-card{
+    position:relative!important;
+    left:auto!important;right:auto!important;top:auto!important;
+    width:auto!important;
+    min-height:174px;
+    padding:18px 16px;
+    grid-row:3;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-start;
+  }
+  .timeline-card strong{font-size:1rem;line-height:1.22}
+  .timeline-card em{font-family:var(--display);font-size:.96rem;line-height:1.22;margin-top:8px}
+  .timeline-card small{margin-top:auto;padding-top:14px;font-size:.76rem;line-height:1.3}
+
+  .tc1{grid-column:1 / 3}
+  .tc2{grid-column:3 / 5}
+  .tc3{grid-column:5 / 7}
+  .tc4{grid-column:7 / 9}
+  .tc5{grid-column:9 / 11}
+  .tc6{grid-column:11 / 13}
+
+  .tc5 em{font-size:.87rem}
+}
+
+/* Contact should never inherit a legacy dark/glass text treatment */
+.contact .contact-card,
+.contact .contact-card *{
+  opacity:1;
+}
+.contact .contact-card h2{
+  color:var(--onyx)!important;
+  -webkit-text-fill-color:var(--onyx)!important;
+}
+
+
+/* V3 timeline micro-fix: keep 360 Huntington clearly separated from the year axis */
+@media(min-width:761px){
+  .investment-node{
+    transform:translateY(18px)!important;
+  }
+  .investment-node:hover{
+    transform:translateY(15px)!important;
+  }
+}
+
 </style>
+<!-- DEPLOYMENT TODO:
+  After the final domain is known, add:
+  <link rel="canonical" href="https://YOUR-DOMAIN/">
+  <meta property="og:url" content="https://YOUR-DOMAIN/">
+  <meta property="og:image" content="https://YOUR-DOMAIN/social-preview.jpg">
+  <meta name="twitter:image" content="https://YOUR-DOMAIN/social-preview.jpg">
+-->
 </head>
-<body>
-
-<nav>
-  <a href="#" class="nav-name">Bhawini Singh</a>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#experience">Experience</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
+<body id="top">
+<header aria-label="Primary navigation" class="site-nav">
+<a class="site-nav-name" href="#top">Bhawini Singh</a>
+<nav aria-label="Portfolio sections" class="site-nav-links">
+<a href="#research">Research</a>
+<a href="#experience">Experience</a>
+<a href="#about">About</a>
+<a href="Bhawini_Singh_Resume_Website.pdf" rel="noopener" target="_blank">Resume</a>
 </nav>
-
-<div class="hero">
-  <h1 class="hero-name">Bhawini Singh</h1>
-  <div class="hero-tag">MS Quantitative Finance &bull; Northeastern University</div>
-  <p class="hero-sub">I work on quantitative investing problems through Python – portfolio construction, volatility modeling, factor research, and systematic strategy backtesting. The focus is on structured, reproducible workflows that reflect how real investment processes actually run.</p>
+</header>
+<section class="hero">
+<div class="wrap main">
+<div class="hero-card glass darkglass">
+<h1>Bhawini<br/>Singh.</h1>
+<p class="hero-copy">M.S. Quantitative Finance candidate at Northeastern University working across investment research, portfolio construction, systematic modeling, and risk analysis.</p>
+<div class="hero-meta">
+<span>Boston, MA</span>
+<span>M.S. Quantitative Finance</span>
 </div>
-
-<section id="about">
-  <p class="section-label">About me</p>
-  <h2 class="section-title">Background</h2>
-  <div class="about-text">
-    <p>I'm an MS Quantitative Finance student at Northeastern University (graduating December 2026).</p>
-    <p>My work sits at the intersection of quantitative research and practical implementation. I build Python-based tools for factor modeling, portfolio construction, systematic backtesting, and volatility forecasting, with a focus on clean, reproducible workflows and institutional-grade data handling.</p>
-    <p>Outside academics, I serve as Chief Marketing Officer at the 360 Huntington Fund, a $2M student-managed fund, where I lead the fund's content and analytics and have also covered equity pitches as an Equity Research Analyst. I also volunteer as a math tutor at Boston Latin Academy and play competitive poker.</p>
-   
-  </div>
+</div>
+<div class="hero-pills">
+<div class="hero-pill glass darkglass">Investment Research</div>
+<div class="hero-pill glass darkglass">Portfolio Construction</div>
+<div class="hero-pill glass darkglass">Quantitative Research</div>
+</div>
+</div>
+<div class="scroll">Scroll to explore ↓</div>
 </section>
-
-<section id="experience">
-  <p class="section-label">Experience &amp; Education</p>
-  <h2 class="section-title">Where I've built and learned.</h2>
-  <p class="section-summary">Buy-side research, investor relations, and fund-level equity work across India and the US.</p>
-
-  <div class="timeline">
-
-    <div class="exp-item">
-      <div class="exp-header">
-        <div class="exp-role">Equity Research Analyst &amp; Head of Marketing</div>
-        <div class="exp-date">Sep 2025 – Present</div>
-      </div>
-      <div class="exp-org">360 Huntington Fund, Northeastern University &bull; Boston, MA</div>
-      <ul class="exp-bullets">
-        <li><b>Stock pitch:</b> Initiated and presented a buy recommendation on KDP (Keurig Dr Pepper) — covering full fundamental analysis, DCF modeling, and comparable company valuation. The position was subsequently initiated by the fund.</li>
-        <li><b>Earnings coverage:</b> Tracked results for portfolio companies against consensus expectations, updating investment theses accordingly.</li>
-        <li><b>Marketing:</b> Manage the fund's LinkedIn — weekly market updates, pitch documentation, and fund communications.</li>
-      </ul>
-    </div>
-
-    <div class="exp-item">
-      <div class="exp-header">
-        <div class="exp-role">Portfolio Management Intern</div>
-        <div class="exp-date">Jun 2025 – Aug 2025</div>
-      </div>
-      <div class="exp-org">Venture Catalysts &bull; Mumbai / Bengaluru, India</div>
-      <ul class="exp-bullets">
-        <li><b>Analytics:</b> Built a Python-based engine automating portfolio monitoring, performance reporting, and data consolidation across all holdings — reducing manual reporting time by ~35%.</li>
-        <li><b>Due diligence:</b> Performed quantitative due diligence on $5M+ in transactions, stress-testing financial models under multi-scenario assumptions and delivering structured risk summaries to the investment committee.</li>
-        <li><b>Data integrity:</b> Implemented validation checks across internal systems, identifying and remediating data exceptions to improve accuracy of investor reporting.</li>
-      </ul>
-    </div>
-
-    <div class="exp-item">
-      <div class="exp-header">
-        <div class="exp-role">Investment Analyst Intern</div>
-        <div class="exp-date">Aug 2024 – Dec 2024</div>
-      </div>
-      <div class="exp-org">888vc &bull; Bengaluru, India</div>
-      <ul class="exp-bullets">
-        <li><b>Deal screening:</b> Evaluated 23 investment opportunities under tight deadlines, building scenario-based financial models in Python and Excel for senior decision-makers.</li>
-        <li><b>Risk analysis:</b> Identified key risk factors and return drivers across diverse startup verticals, supporting data-driven screening and capital allocation decisions.</li>
-        <li><b>Analytics:</b> Conducted pattern recognition across deal metrics and financial KPIs, improving consistency and rigor of early-stage evaluation frameworks.</li>
-      </ul>
-    </div>
-
-    <div class="exp-item">
-      <div class="exp-header">
-        <div class="exp-role">Investor Relations Intern</div>
-        <div class="exp-date">Jan 2024 – Jun 2024</div>
-      </div>
-      <div class="exp-org">Venture Catalysts &bull; Mumbai / Bengaluru, India</div>
-      <ul class="exp-bullets">
-        <li><b>Investor management:</b> Managed relationships with 50+ institutional and HNW investors, contributing to $300K in new commitments through proactive outreach and tailored communication.</li>
-        <li><b>Capital raise:</b> Prepared client-facing presentations and DDQ responses customized to institutional stakeholder requirements, directly supporting capital raise outcomes.</li>
-        <li><b>CRM:</b> Maintained pipeline tracking across investor preferences, outreach history, and engagement activity across multiple systems.</li>
-      </ul>
-    </div>
-
-  </div>
-
-  <div class="edu-grid">
-    <div class="edu-card">
-      <div class="edu-deg">MS, Quantitative Finance <span style="font-weight:400; color:var(--muted);">(Expected Dec 2026)</span></div>
-      <div class="edu-school">Northeastern University</div>
-      <div class="edu-meta">Boston, MA</div>
-      <div class="edu-courses">Coursework: Portfolio Theory, Stochastic Processes, Econometrics, Derivatives Pricing, Risk Management, Financial Machine Learning</div>
-    </div>
-    <div class="edu-card">
-      <div class="edu-deg">BS, Economics &amp; Mathematics <span style="font-weight:400; color:var(--muted);">(May 2025)</span></div>
-      <div class="edu-school">CHRIST University</div>
-      <div class="edu-meta">Bengaluru, India</div>
-      <div class="edu-courses">Coursework: Real Analysis, Linear Algebra, Econometrics, Microeconomics, Probability &amp; Statistics</div>
-    </div>
-  </div>
+<section class="approach">
+<div class="wrap">
+<div class="approach-top">
+<div><div class="eyebrow">Approach</div><h2>An idea is only the beginning.</h2></div>
+<p class="muted">Investment ideas only become useful when they survive evidence, portfolio constraints, implementation, and measurement.</p>
+</div>
+<div class="process">
+<div class="step"><div class="n">01</div><b>Research</b><p>Form the hypothesis and interrogate the evidence.</p></div>
+<div class="step"><div class="n">02</div><b>Test</b><p>Challenge assumptions and separate persistence from noise.</p></div>
+<div class="step"><div class="n">03</div><b>Construct</b><p>Translate conviction into allocation under real constraints.</p></div>
+<div class="step"><div class="n">04</div><b>Execute</b><p>Account for liquidity, transaction costs, and market impact.</p></div>
+<div class="step"><div class="n">05</div><b>Measure</b><p>Understand performance, exposures, attribution, and change.</p></div>
+</div>
+</div>
 </section>
-
-<section id="projects">
-  <p class="section-label">Projects</p>
-  <h2 class="section-title">Selected work.</h2>
-  <p class="section-summary">A selection of practical, research-driven tools built to solve real portfolio construction and systematic investing problems. Click any project to expand details.</p>
-
-  <div class="projects-list">
-
-    <div class="project-card">
-      <div class="proj-summary" onclick="toggle(this)">
-        <div class="proj-left">
-          <div class="proj-title">Automated Investment Analytics &amp; Portfolio Optimization System</div>
-          <div class="proj-oneliner">End-to-end optimization pipeline with live data, four construction strategies, factor regressions, and a deployed Streamlit app.</div>
-        </div>
-        <div class="proj-right">
-          <div class="proj-tools">Python &bull; CVXPY &bull; Streamlit</div>
-          <div class="proj-toggle">View details</div>
-        </div>
-      </div>
-      <div class="proj-details">
-        <div class="proj-sections">
-          <div>
-            <div class="proj-subhead">Objective</div>
-            <div class="proj-body">Build a reusable quantitative pipeline for portfolio construction and factor analysis, deployed as a live interactive tool.</div>
-          </div>
-          <div>
-            <div class="proj-subhead">Methodology</div>
-            <div class="proj-body">Live Yahoo Finance data; log returns, rolling volatility, 60-day Sharpe. Four strategies: minimum variance, max Sharpe, risk parity, equal weight via CVXPY. Fama-French 3-factor regressions, 6-month momentum signals, Monte Carlo frontier across 3,000 portfolios.</div>
-          </div>
-          <div>
-            <div class="proj-subhead">Tools</div>
-            <div class="proj-body">Python, CVXPY, scipy, pandas, yfinance, Streamlit, Ken French Data Library</div>
-          </div>
-          <div>
-            <div class="proj-subhead">Outcome</div>
-            <div class="proj-body">Deployed on Streamlit Cloud — any user can input custom tickers, adjust constraints, and run optimization interactively.</div>
-          </div>
-        </div>
-        <a href="https://investment-dashboard1.streamlit.app" class="proj-link">Live demo &rarr;</a>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="proj-summary" onclick="toggle(this)">
-        <div class="proj-left">
-          <div class="proj-title">Modular Backtesting &amp; Systematic Strategy Research</div>
-          <div class="proj-oneliner">OOP backtesting framework with walk-forward validation across momentum, mean reversion, and factor strategies.</div>
-        </div>
-        <div class="proj-right">
-          <div class="proj-tools">Python</div>
-          <div class="proj-toggle">View details</div>
-        </div>
-      </div>
-      <div class="proj-details">
-        <div class="proj-sections">
-          <div>
-            <div class="proj-subhead">Objective</div>
-            <div class="proj-body">Build a reusable, asset-class-agnostic framework for systematic strategy research and rapid signal iteration.</div>
-          </div>
-          <div>
-            <div class="proj-subhead">Methodology</div>
-            <div class="proj-body">OOP design with modular signal generation, configurable position sizing, and a transaction cost layer. Walk-forward out-of-sample validation over a 6-year horizon across three strategy types.</div>
-          </div>
-          <div>
-            <div class="proj-subhead">Tools</div>
-            <div class="proj-body">Python, pandas, numpy, matplotlib</div>
-          </div>
-          <div>
-            <div class="proj-subhead">Outcome</div>
-            <div class="proj-body">6-month momentum delivered best risk-adjusted performance (Sharpe ~0.80); execution costs identified as the binding constraint on signal viability across all strategies.</div>
-          </div>
-        </div>
-        <a href="https://github.com/Bhawini08" class="proj-link">View on GitHub &rarr;</a>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="proj-summary" onclick="toggle(this)">
-        <div class="proj-left">
-          <div class="proj-title">Black-Litterman &amp; Risk Parity Portfolio Optimization</div>
-          <div class="proj-oneliner">Compared investor-view-informed allocations against risk parity and mean-variance baselines across asset classes.</div>
-        </div>
-        <div class="proj-right">
-          <div class="proj-tools">Python</div>
-          <div class="proj-toggle">View details</div>
-        </div>
-      </div>
-      <div class="proj-details">
-        <div class="proj-sections">
-          <div>
-            <div class="proj-subhead">Objective</div>
-            <div class="proj-body">Evaluate how formally incorporating investor views shifts allocations relative to standard portfolio construction methods.</div>
-          </div>
-          <div>
-            <div class="proj-subhead">Methodology</div>
-            <div class="proj-body">Black-Litterman model blending equilibrium returns with investor views. Compared against risk parity and mean-variance portfolios across multiple asset classes.</div>
-          </div>
-          <div>
-            <div class="proj-subhead">Tools</div>
-            <div class="proj-body">Python, numpy, pandas, scipy, matplotlib</div>
-          </div>
-          <div>
-            <div class="proj-subhead">Outcome</div>
-            <div class="proj-body">Risk parity improved information ratio ~18% vs. mean-variance baseline; highlighted diversification and downside protection trade-offs.</div>
-          </div>
-        </div>
-        <a href="https://github.com/Bhawini08" class="proj-link">View on GitHub &rarr;</a>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="proj-summary" onclick="toggle(this)">
-        <div class="proj-left">
-          <div class="proj-title">Volatility Forecasting &amp; Regime Detection</div>
-          <div class="proj-oneliner">GARCH and GJR-GARCH models on 6,500+ daily observations, applied to dynamic position sizing.</div>
-        </div>
-        <div class="proj-right">
-          <div class="proj-tools">Python &bull; statsmodels</div>
-          <div class="proj-toggle">View details</div>
-        </div>
-      </div>
-      <div class="proj-details">
-        <div class="proj-sections">
-          <div>
-            <div class="proj-subhead">Objective</div>
-            <div class="proj-body">Forecast return volatility more accurately than rolling historical variance and use regime outputs to inform position sizing.</div>
-          </div>
-          <div>
-            <div class="proj-subhead">Methodology</div>
-            <div class="proj-body">GARCH(1,1) and GJR-GARCH on 6,500+ daily return observations. Regime classification outputs applied to a dynamic sizing overlay.</div>
-          </div>
-          <div>
-            <div class="proj-subhead">Tools</div>
-            <div class="proj-body">Python, statsmodels, arch, pandas, numpy</div>
-          </div>
-          <div>
-            <div class="proj-subhead">Outcome</div>
-            <div class="proj-body">~12% reduction in forecast RMSE vs. rolling baseline; regime-aware sizing improved stability in high-volatility periods.</div>
-          </div>
-        </div>
-        <a href="https://github.com/Bhawini08" class="proj-link">View on GitHub &rarr;</a>
-      </div>
-    </div>
-
-    <div class="project-card">
-      <div class="proj-summary" onclick="toggle(this)">
-        <div class="proj-left">
-          <div class="proj-title">Multi-Factor Alpha Research Pipeline</div>
-          <div class="proj-oneliner">OLS regressions across 49 industry portfolios using Fama-French 5-factor and Carhart 4-factor models on CRSP/WRDS data.</div>
-        </div>
-        <div class="proj-right">
-          <div class="proj-tools">Python &bull; R &bull; SQL</div>
-          <div class="proj-toggle">View details</div>
-        </div>
-      </div>
-      <div class="proj-details">
-        <div class="proj-sections">
-          <div>
-            <div class="proj-subhead">Objective</div>
-            <div class="proj-body">Test whether statistically significant alpha persists across industry portfolios after controlling for standard factor exposures.</div>
-          </div>
-          <div>
-            <div class="proj-subhead">Methodology</div>
-            <div class="proj-body">Automated OLS pipelines across 49 industry portfolios with full residual diagnostics. Applied Fama-French 5-factor and Carhart 4-factor models on CRSP/WRDS data.</div>
-          </div>
-          <div>
-            <div class="proj-subhead">Tools</div>
-            <div class="proj-body">Python, R, SQL, statsmodels, CRSP/WRDS</div>
-          </div>
-          <div>
-            <div class="proj-subhead">Outcome</div>
-            <div class="proj-body">Identified statistically significant alpha of 0.31% (p = 0.018); reproducible pipeline built to institutional research standards.</div>
-          </div>
-        </div>
-        <a href="https://github.com/Bhawini08" class="proj-link">View on GitHub &rarr;</a>
-      </div>
-    </div>
-
-  </div>
+<section class="research" id="research">
+<div class="wrap">
+<div class="eyebrow">Selected Research</div>
+<h2>Questions worth investigating.</h2>
+<p class="muted project-intro">I use quantitative methods to answer investment and portfolio questions. These four implemented projects span cross-asset dependence, regime-aware allocation, fundamental investment decisions, and systematic portfolio research. Select a project to examine the question, implementation, validation discipline, and evidence produced.</p>
+<div class="cards project-cards">
+<button aria-expanded="false" class="card glass darkglass project-card" data-project="diversification">
+<div class="tag">01 · Quantitative Research</div>
+<h3>When Diversification Fails</h3>
+<p>Examines cross-asset dependence during market stress, focusing on downside correlation, volatility regimes, drawdown synchronization, and diversification fragility.</p>
+<span class="project-open">Explore project →</span>
+</button>
+<button aria-expanded="false" class="card glass darkglass project-card" data-project="regimes">
+<div class="tag">02 · Portfolio Construction</div>
+<h3>Regime-Aware Portfolio Construction</h3>
+<p>Investigates adaptive multi-asset construction across changing growth, inflation, rate, and volatility environments.</p>
+<span class="project-open">Explore project →</span>
+</button>
+<button aria-expanded="false" class="card glass darkglass project-card" data-project="narrative">
+<div class="tag">03 · Investment Research</div>
+<h3>From Narrative to Position</h3>
+<p>Builds a complete investment case from business fundamentals and embedded expectations to scenario analysis, position sizing, and portfolio impact.</p>
+<span class="project-open">Explore project →</span>
+</button>
+<button aria-expanded="false" class="card glass darkglass project-card" data-project="engine">
+<div class="tag">04 · Systematic Research</div>
+<h3>Portfolio Decision Engine</h3>
+<p>Develops research infrastructure connecting signal formation, portfolio construction, execution assumptions, risk controls, and performance attribution.</p>
+<span class="project-open">Explore project →</span>
+</button>
+</div>
+<div aria-live="polite" class="project-detail" id="projectPanel"></div>
+</div>
 </section>
-
-<section id="contact">
-  <p class="section-label">Contact</p>
-  <h2 class="section-title">Let's talk.</h2>
-  <div class="contact-grid">
-    <div class="contact-text">
-      <p>I'm actively exploring buy-side roles in quant research, quant trading, portfolio management, equity research, and risk analytics.</p>
-      <p>Whether you have an opportunity, want to talk markets, or just want to connect — my inbox is open.</p>
-      <div class="avail-tag">Open to Summer / Fall 2026 roles</div>
-    </div>
-    <div class="contact-links">
-      <a href="mailto:bhawinis08@gmail.com" class="contact-item">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
-        </div>
-        <div>
-          <div class="contact-lbl">Email</div>
-          <div class="contact-val">bhawinis08@gmail.com</div>
-        </div>
-      </a>
-      <a href="https://www.linkedin.com/in/bhawini-singh/" class="contact-item">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-        </div>
-        <div>
-          <div class="contact-lbl">LinkedIn</div>
-          <div class="contact-val">linkedin.com/in/bhawini-singh</div>
-        </div>
-      </a>
-      <a href="https://github.com/Bhawini08" class="contact-item">
-        <div class="contact-icon">
-          <svg viewBox="0 0 24 24"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-        </div>
-        <div>
-          <div class="contact-lbl">GitHub</div>
-          <div class="contact-val">github.com/Bhawini08</div>
-        </div>
-      </a>
-    </div>
-  </div>
+<section class="lab">
+<div class="wrap lab-grid lab-regime-grid">
+<div>
+<div class="eyebrow">Research Lab</div>
+<h2>Inside a regime-aware portfolio model.</h2>
+<p class="muted">An interactive view of the research architecture behind my Regime-Aware Portfolio Construction project. Select a market state to see what information the framework conditions on, what it re-estimates, and how the portfolio decision is validated.</p>
+<a class="lab-repo-link" href="https://github.com/Bhawini08/regime-aware-portfolio-construction" rel="noopener" target="_blank">Inspect the full research on GitHub ↗</a>
+</div>
+<div class="lab-panel regime-lab">
+<div class="lab-topline">
+<span>Observable State</span>
+<span>10-Asset Multi-Asset Universe</span>
+</div>
+<div aria-label="Select an illustrative market regime" class="regime-controls" role="group">
+<button class="regime-btn active" data-regime="growth" type="button">Growth ↑   Inflation ↓</button>
+<button class="regime-btn" data-regime="stagflation" type="button">Growth ↓   Inflation ↑</button>
+<button class="regime-btn" data-regime="volatility" type="button">High Volatility</button>
+</div>
+<div class="regime-state">
+<div class="regime-state-label">Research lens</div>
+<h3 id="regimeTitle">Growth supportive, inflation easing</h3>
+<p id="regimeCopy">The framework identifies the state using lagged growth, inflation, rates, and volatility information before portfolio formation. It then conditions return and covariance estimates on observations from comparable states.</p>
+</div>
+<div class="model-grid">
+<div class="model-cell"><small>01 · Information Set</small><strong id="infoSet">Industrial Production · CPI · 10Y Yield · VIX</strong><p>Macro and market variables are lagged before portfolio formation to reduce look-ahead bias.</p></div>
+<div class="model-cell"><small>02 · Estimation</small><strong id="estimation">Regime-conditioned moments</strong><p id="estimationCopy">Sparse state estimates are shrunk toward expanding long-run estimates rather than treated as perfectly known.</p></div>
+<div class="model-cell"><small>03 · Portfolio Decision</small><strong id="portfolioRule">Constrained long-only allocation</strong><p id="portfolioCopy">The optimizer incorporates portfolio constraints, turnover penalties, and transaction-cost assumptions before weights are accepted.</p></div>
+<div class="model-cell"><small>04 · Validation</small><strong>Chronological walk-forward test</strong><p>Performance is compared with equal-weight, static minimum-variance, and risk-parity benchmarks using only information available at each rebalance.</p></div>
+</div>
+<div class="universe-block">
+<span>Research universe</span>
+<div class="asset-chips"><i>SPY</i><i>EFA</i><i>EEM</i><i>IEF</i><i>TLT</i><i>LQD</i><i>HYG</i><i>GLD</i><i>DBC</i><i>VNQ</i></div>
+</div>
+<p class="lab-note">This interaction explains the implemented research process rather than displaying fabricated portfolio returns. Empirical results and code are available in the linked repository.</p>
+</div>
+</div>
 </section>
-
-<footer>
-  <p>&copy; 2026 Bhawini Singh</p>
-  <p>Boston, MA &bull; Open to global relocation</p>
-</footer>
-
+<section class="journey" id="experience">
+<div class="wrap">
+<div class="eyebrow">Journey</div>
+<h2>Built across disciplines.</h2>
+<p class="muted" style="max-width:720px">A chronological view of the academic foundations and internships that shaped how I approach markets, investing, research, and quantitative finance. Select any experience to explore the work behind it.</p>
+<div class="timeline-shell">
+<div class="timeline-legend">
+<span class="legend-mark">Academic</span>
+<span class="legend-mark internship">Internship</span>
+<span class="legend-mark investment">Investment Experience</span>
+</div>
+<div class="career-timeline">
+<div class="timeline-canvas">
+<div class="time-axis"></div>
+<div class="year-marker y2022">2022</div>
+<div class="year-marker y2023">2023</div>
+<div class="year-marker y2024">2024</div>
+<div class="year-marker y2025">2025</div>
+<div class="year-marker y2026">2026</div>
+<button aria-expanded="false" class="academic-band christ-band" data-case="christ">
+<strong>CHRIST University · August 2022 - May 2025</strong>
+<small>B.Sc. Economics and Mathematics</small>
+</button>
+<button aria-expanded="false" class="academic-band neu-band" data-case="neu">
+<strong>Northeastern University · September 2025 - December 2026</strong>
+<small>M.S. Quantitative Finance</small>
+</button>
+<button aria-expanded="false" class="investment-node huntington-node" data-case="huntington">
+<strong>360 Huntington Fund</strong>
+<small>Equity Research Analyst · Sep 2025 - Aug 2026</small>
+</button>
+<button aria-expanded="false" class="timeline-card tc1" data-case="strode"><strong>Data Analyst Intern</strong><em>Strode Experiences</em><small>Sep 2023 - Dec 2023</small></button>
+<button aria-expanded="false" class="timeline-card tc2" data-case="vcir"><strong>Investor Relations Intern</strong><em>Venture Catalysts</em><small>Jan 2024 - Jun 2024</small></button>
+<button aria-expanded="false" class="timeline-card tc3" data-case="888"><strong>Investment Analyst Intern</strong><em>888 vc</em><small>Sep 2024 - Dec 2024</small></button>
+<button aria-expanded="false" class="timeline-card tc4" data-case="vcpm"><strong>Portfolio Management Intern</strong><em>Venture Catalysts</em><small>Jun 2025 - Aug 2025</small></button>
+<button aria-expanded="false" class="timeline-card tc5" data-case="mitsbaa"><strong>Finance Intern</strong><em>MIT Sloan Boston Alumni Association</em><small>May 2026 - Jun 2026</small></button>
+<button aria-expanded="false" class="timeline-card tc6" data-case="valmar"><strong>Junior Research Analyst Intern</strong><em>Valmar Capital</em><small>Jul 2026 - Aug 2026</small></button>
+</div>
+</div>
+<div aria-live="polite" class="case-study" id="casePanel"></div>
+</div>
+</div>
+</section>
+<section class="think">
+<div class="wrap">
+<div class="eyebrow">How I Think</div>
+<div class="principle">A model is an argument, not an answer.</div>
+<div class="principle">Complexity has to earn its place in the model.</div>
+<div class="principle">If the thesis only works in hindsight, it doesn't work.</div>
+</div>
+</section>
+<section class="about" id="about">
+<div class="wrap about-grid">
+<div><div class="eyebrow">About</div><h2>A little beyond the numbers.</h2></div>
+<div class="about-copy">
+<p>My background in economics and mathematics, together with early experience across venture capital and investor relations, drew me toward understanding how markets, businesses, and capital interact. Quantitative finance gave me a way to examine those questions with greater structure and rigor.</p>
+<p>Today, I use quantitative methods to answer investment and portfolio questions, combining fundamental research, portfolio analysis, and systematic modeling. I am particularly drawn to problems where data requires interpretation, models require judgment, and decisions have to be made under uncertainty.</p>
+<div class="personal">Outside finance, you'll usually find me exploring the city, experimenting in the kitchen, or buried in a book that has absolutely nothing to do with markets.</div>
+</div>
+</div>
+</section>
+<section class="capabilities">
+<div class="wrap">
+<div class="eyebrow">Capabilities</div>
+<h2>Methods, markets, and tools.</h2>
+<div class="cap-grid">
+<div class="cap-row"><h3>Quantitative Research</h3><div class="cap-stack">Econometrics / Time Series / Factor Models / Risk Modeling / Statistical Testing</div></div>
+<div class="cap-row"><h3>Portfolio &amp; Markets</h3><div class="cap-stack">Portfolio Construction / Asset Allocation / Performance Attribution / Investment Research / Derivatives</div></div>
+<div class="cap-row"><h3>Systematic &amp; Execution</h3><div class="cap-stack">Backtesting / Signal Evaluation / Transaction Cost Analysis / Execution Modeling / Scenario Analysis</div></div>
+<div class="cap-row"><h3>Technical</h3><div class="cap-stack">Python (Pandas, NumPy, SciPy, Statsmodels, Scikit-learn) / SQL / Streamlit / Git &amp; GitHub / Excel</div></div>
+</div>
+</div>
+</section>
+<section class="contact">
+<div class="wrap">
+<div class="contact-card glass darkglass">
+<div class="eyebrow">Contact</div>
+<h2>Let's talk markets.</h2>
+<p class="contact-copy">Open to conversations around investment research, quantitative finance, portfolio management, markets, and interesting problems worth investigating.</p>
+<div class="links"><a href="https://www.linkedin.com/in/bhawini-singh/" rel="noopener" target="_blank">LinkedIn ↗</a><a href="mailto:bhawinis08@gmail.com">Email ↗</a><a href="https://github.com/Bhawini08" rel="noopener" target="_blank">GitHub ↗</a><a href="Bhawini_Singh_Resume_Website.pdf" rel="noopener" target="_blank">Resume ↗</a></div>
+</div>
+</div>
+</section>
 <script>
-  function toggle(el) {
-    const details = el.nextElementSibling;
-    const btn = el.querySelector('.proj-toggle');
-    const isOpen = details.classList.contains('open');
-    details.classList.toggle('open', !isOpen);
-    btn.textContent = isOpen ? 'View details' : 'Hide details';
-  }
+const regimeData={
+  growth:{title:'Growth supportive, inflation easing',copy:'The framework identifies the state using lagged growth, inflation, rates, and volatility information before portfolio formation. It then conditions return and covariance estimates on observations from comparable states.',estimation:'Regime-conditioned moments',estimationCopy:'State-specific return and covariance estimates are combined with expanding long-run information through shrinkage when the regime sample is sparse.',portfolio:'Constrained long-only allocation',portfolioCopy:'The portfolio engine translates the conditioned opportunity set into weights while enforcing investment constraints and penalizing excessive turnover.'},
+  stagflation:{title:'Growth weakening, inflation elevated',copy:'A different combination of observable macro states changes which historical observations inform the conditioned opportunity set. The model does not assume that long-run average relationships remain unchanged across regimes.',estimation:'State-specific risk and return estimates',estimationCopy:'Regime observations inform expected returns and covariance, with shrinkage toward expanding estimates used to reduce instability from limited state histories.',portfolio:'Re-estimate before reallocating',portfolioCopy:'Weights are solved under the same portfolio constraints, allowing the research question to focus on whether conditioning adds value after turnover and implementation costs.'},
+  volatility:{title:'Volatility stress state',copy:'Elevated market volatility is treated as an observable state variable rather than a hindsight crisis label. Only information available before each portfolio decision enters the allocation process.',estimation:'Stress-conditioned covariance',estimationCopy:'The framework re-estimates the opportunity set using comparable observations while retaining shrinkage toward longer-run information to control estimation error.',portfolio:'Risk-aware constrained allocation',portfolioCopy:'Portfolio weights remain subject to long-only constraints, turnover discipline, and transaction-cost assumptions before the walk-forward return is recorded.'}
+};
+const regimeButtons=[...document.querySelectorAll('.regime-btn')];
+regimeButtons.forEach(btn=>btn.addEventListener('click',()=>{
+  regimeButtons.forEach(b=>b.classList.remove('active')); btn.classList.add('active');
+  const d=regimeData[btn.dataset.regime];
+  document.getElementById('regimeTitle').textContent=d.title;
+  document.getElementById('regimeCopy').textContent=d.copy;
+  document.getElementById('estimation').textContent=d.estimation;
+  document.getElementById('estimationCopy').textContent=d.estimationCopy;
+  document.getElementById('portfolioRule').textContent=d.portfolio;
+  document.getElementById('portfolioCopy').textContent=d.portfolioCopy;
+}));
 </script>
+<script>
+const caseData = {
+  christ: {
+    title:"CHRIST University",
+    meta:"B.Sc. Economics and Mathematics · August 2022 - May 2025",
+    intro:"Built a combined foundation in economic reasoning, mathematics, statistics, and empirical analysis before moving toward quantitative finance.",
+    blocks:[
+      ["Academic Foundation","Economics and mathematics provided the base for thinking about markets through both incentives and formal analytical methods."],
+      ["Selected Coursework","Econometrics, Probability Theory, Statistics, Linear Algebra, Numerical Methods, Optimization Techniques, and Statistical Computing."],
+      ["Beyond Coursework","Participated in Abhisaran and Cognoscere, organizing intercollegiate activities and developing experience beyond purely academic work."]
+    ],
+    skills:"Econometrics / Probability / Linear Algebra / Optimization / Statistical Computing / Economic Analysis"
+  },
+  neu: {
+    title:"Northeastern University",
+    meta:"M.S. Quantitative Finance · September 2025 - December 2026",
+    intro:"Advanced quantitative finance training focused on connecting financial theory, empirical methods, programming, and portfolio decision-making.",
+    blocks:[
+      ["Focus Areas","Investment analysis, portfolio management, financial mathematics, empirical methods, derivatives, risk, and quantitative modeling."],
+      ["Selected Coursework","Investment Analysis, Financial Modeling, Financial Econometrics, Machine Learning, Time Series Analysis, Derivatives Pricing, Quantitative Portfolio Management, and Risk Modeling."],
+      ["Applied Work","Developed research and modeling projects spanning portfolio optimization, systematic backtesting, execution modeling, factor research, options analytics, and financial data workflows."]
+    ],
+    skills:"Quantitative Finance / Portfolio Management / Time Series / Derivatives / Risk Modeling / Python"
+  },
+  huntington: {
+    title:"360 Huntington Fund",
+    meta:"Equity Research Analyst · September 2025 - August 2026",
+    intro:"Conducted bottom-up equity research for an approximately $2M student-managed portfolio, connecting company fundamentals, valuation, catalysts, and downside risk to an investable recommendation.",
+    blocks:[
+      ["Research Process","Analyzed financial statements, industry dynamics, competitive positioning, earnings drivers, and company-specific catalysts to build and continuously test fundamental investment theses."],
+      ["Valuation & Risk","Built DCF and relative valuation models with scenario analysis, sensitivity testing, downside risks, and catalysts to evaluate risk-reward and translate research into explicit price targets and recommendations."],
+      ["Investment Decision","Presented a Keurig Dr Pepper thesis to the investment committee with a $44 price target and approximately 65% upside at initiation. The recommendation was approved and added to the portfolio, followed by ongoing monitoring of earnings, valuation changes, thesis drivers, and portfolio risk."]
+    ],
+    skills:"Bottom-Up Equity Research / DCF & Relative Valuation / Scenario Analysis / Investment Thesis / Portfolio Monitoring / Investment Committee Presentation"
+  },
+  strode: {
+    title:"Strode Experiences",
+    meta:"Data Analyst Intern · September 2023 - December 2023",
+    intro:"Worked with the new-business development team as the company evaluated opportunities for European expansion.",
+    blocks:[
+      ["Context & Objective","The team needed a structured view of European tourism markets to identify attractive geographies for business development."],
+      ["Action & Methodology","Collected and analyzed tourism data across European countries and translated market indicators into comparative reports and presentations."],
+      ["Application","Provided structured market research that helped frame geographic opportunities and supported expansion discussions."]
+    ],
+    skills:"Market Research / Data Analysis / Economic Analysis / Excel / Presentation"
+  },
+  vcir: {
+    title:"Venture Catalysts",
+    meta:"Investor Relations Intern · January 2024 - June 2024",
+    intro:"Worked at the intersection of fund raising, investor research, and early-stage investing.",
+    blocks:[
+      ["Context & Objective","The team was identifying prospective investors for Venture Catalysts' startup fund and developing conversations around fund deployment opportunities."],
+      ["Action & Methodology","Evaluated prospective LP targets, prepared investment and capital-raising materials, communicated investment cases, and coordinated discussions with senior stakeholders."],
+      ["Application","Contributed to a structured investor outreach process and gained direct exposure to how funds communicate strategy, opportunity, and risk to prospective capital providers."]
+    ],
+    skills:"Investor Research / Capital Raising / Investment Communication / Fund Analysis / Excel"
+  },
+  "888": {
+    title:"888 vc",
+    meta:"Investment Analyst Intern · September 2024 - December 2024",
+    intro:"Evaluated early-stage companies by connecting market structure, business-model economics, financial assumptions, valuation, and downside risk into decision-ready investment analysis.",
+    blocks:[
+      ["Investment Screen","Worked across an early-stage venture pipeline, researching 23 opportunities in depth and assessing business models, market size, competitive positioning, revenue dynamics, unit economics, and key operating assumptions."],
+      ["Diligence & Valuation","Built scenario-based financial and valuation analyses in Python and Excel, testing revenue and operating assumptions, comparable-company context, downside cases, and the conditions required for an opportunity to support an investable thesis."],
+      ["Decision Output","Converted company and market research into concise investment assessments and memoranda for senior investors, making the core opportunity, assumptions, risks, and diligence questions explicit for internal evaluation."]
+    ],
+    skills:"Investment Research / Venture Due Diligence / Scenario Analysis / Valuation / Market Sizing / Unit Economics / Python / Excel"
+  },
+  vcpm: {
+    title:"Venture Catalysts",
+    meta:"Portfolio Management Intern · June 2025 - August 2025",
+    intro:"Moved from investor-facing work into portfolio monitoring and transaction diligence, combining company-level operating analysis with fund reporting and investment evaluation.",
+    blocks:[
+      ["Portfolio Monitoring","Tracked portfolio-company financials, operating KPIs, valuation developments, investment activity, and company updates. Consolidated and validated information from multiple sources to support recurring portfolio reviews and management reporting."],
+      ["Investment Diligence","Supported quantitative diligence on two transactions totaling more than $5M, using financial modeling, scenario analysis, assumption testing, and downside-risk evaluation to examine potential outcomes and key investment sensitivities."],
+      ["Reporting & Decision Support","Built Python-based tools for portfolio monitoring, reporting, and data consolidation, with validation and error-handling controls designed to surface reporting exceptions. The work connected company performance, transaction analysis, and portfolio-level monitoring for investment review."]
+    ],
+    skills:"Portfolio Monitoring / Investment Diligence / Financial Modeling / Scenario & Downside Analysis / Data Validation / Python / Excel"
+  },
+  mitsbaa: {
+    title:"MIT Sloan Boston Alumni Association",
+    meta:"Finance Intern · May 2026 - June 2026",
+    intro:"Turned multi-year operating and financial records into board-facing analysis, then extended that work into a capital-allocation proposal for the association's excess cash.",
+    blocks:[
+      ["Financial Analysis","Analyzed multi-year revenue, expenses, budgets, cash holdings, and operating trends to identify how resources were generated, deployed, and retained across reporting periods."],
+      ["Executive Reporting","Built an interactive executive dashboard using D3.js Sankey diagrams and Chart.js to make cash flows, spending patterns, and budget relationships easier to inspect and communicate to senior stakeholders."],
+      ["Capital Allocation","Evaluated alternatives for idle cash held in bank CDs, comparing Fidelity FDRXX and diversified AOR/AOA ETF allocations across liquidity, risk, and return considerations. Presented the resulting proposal to the Treasurer and Board for capital-allocation discussion."]
+    ],
+    skills:"Financial Analysis / Cash-Flow Analysis / Capital Allocation / Scenario Analysis / D3.js / Chart.js / Executive Reporting"
+  },
+  valmar: {
+    title:"Valmar Capital",
+    meta:"Junior Research Analyst Intern · July 2026 - August 2026",
+    intro:"Built quantitative portfolio infrastructure for a multi-manager digital-asset investment environment.",
+    blocks:[
+      ["Context & Objective","Portfolio monitoring and reporting relied on fragmented Excel workflows spanning historical valuations, administrator NAVs, fund flows, share classes, and underlying manager exposures."],
+      ["Action & Methodology","Developed a Python-based analytics framework covering NAV reconstruction, return calculations, historical reconciliation, exposure aggregation, performance analysis, and an interactive internal dashboard."],
+      ["Result & Application","Created a more structured and reproducible portfolio-monitoring environment connecting performance, exposures, attribution, and market-regime analysis without relying on disconnected calculations."]
+    ],
+    skills:"Python / Streamlit / Portfolio Analytics / NAV & Valuation / Performance Attribution / Exposure Analysis / Data Validation"
+  }
+};
 
+const panel = document.getElementById("casePanel");
+document.querySelectorAll("[data-case]").forEach(el=>{
+  el.addEventListener("click",()=>{\n    document.querySelectorAll("[data-case]").forEach(x=>x.setAttribute("aria-expanded","false"));\n    el.setAttribute("aria-expanded","true");
+    const d=caseData[el.dataset.case];
+    panel.innerHTML = `
+      <div class="case-head">
+        <div><div class="eyebrow">${d.meta}</div><h3>${d.title}</h3></div>
+        <p>${d.intro}</p>
+      </div>
+      <div class="case-columns">
+        ${d.blocks.map(b=>`<div class="case-block"><h4>${b[0]}</h4><p>${b[1]}</p></div>`).join("")}
+      </div>
+      <div class="skill-stack">Skills & Methods · ${d.skills}</div>
+      <button class="close-case" type="button">Close details</button>`;
+    panel.classList.add("active");
+    panel.querySelector(".close-case").onclick=()=>{ panel.classList.remove("active"); el.setAttribute("aria-expanded","false"); el.focus(); };
+    panel.scrollIntoView({behavior:"smooth",block:"nearest"});
+  });
+});
+</script>
+<script>
+const projectData = {
+  diversification: {
+    category:"Quantitative Research",
+    title:"When Diversification Fails",
+    intro:"An implemented cross-asset risk study testing whether diversification remains intact when volatility rises, losses accelerate, and drawdowns become synchronized.",
+    blocks:[
+      ["Research Question","How stable are cross-asset diversification benefits across normal and stressed markets, and which relationships deteriorate when portfolio protection matters most?"],
+      ["Research Design","Analyzes eight liquid asset-class proxies using rolling and downside correlation, stress-state dependence, lower-tail co-exceedance, synchronized drawdowns, diversification ratio, effective number of bets, and volatility-regime diagnostics."],
+      ["Evidence Produced","Separates normal and stressed states to quantify changes in dependence, drawdown synchronization, and portfolio fragility rather than relying on a single full-sample correlation matrix."],
+      ["Validation Discipline","Stress states are classified using contemporaneous or trailing information only. The framework treats stress diagnostics as descriptive evidence and does not present historical crisis behavior as a forecasting model."]
+    ],
+    methods:"Python / Cross-Asset Dependence / Downside Correlation / Tail Co-Exceedance / Drawdown Analysis / Diversification Diagnostics",
+    github:"https://github.com/Bhawini08/when-diversification-fails"
+  },
+  regimes: {
+    category:"Portfolio Construction",
+    title:"Regime-Aware Portfolio Construction",
+    intro:"A walk-forward multi-asset allocation framework testing whether portfolio construction improves when the opportunity set is conditioned on observable market and macro regimes rather than one long-run average.",
+    blocks:[
+      ["Research Question","Can regime-conditioned estimates of return and risk improve portfolio construction relative to static allocations when growth, inflation, rates, and volatility change?"],
+      ["Research Design","Builds monthly returns across 10 liquid asset proxies and conditions expanding estimates on lagged growth, inflation, rate, and volatility states. Sparse regime estimates are shrunk toward expanding long-run estimates before constrained long-only optimization."],
+      ["Evidence Produced","Runs a chronological walk-forward comparison against equal-weight, static minimum-variance, and risk-parity portfolios, reporting Sharpe ratio, drawdown, downside statistics, turnover, regime occupancy, and transition behavior."],
+      ["Validation Discipline","Macro series are shifted before portfolio formation so unreleased contemporaneous observations are not used. Portfolio weights, regime thresholds, conditional moments, and risk estimates are formed only from information available before the return being evaluated."]
+    ],
+    methods:"Python / Regime Analysis / Multi-Asset Allocation / Portfolio Optimization / Walk-Forward Backtesting / Turnover & Transaction Costs",
+    github:"https://github.com/Bhawini08/regime-aware-portfolio-construction"
+  },
+  narrative: {
+    category:"Investment Research",
+    title:"From Narrative to Position",
+    intro:"A fundamental-investing decision framework implemented on Visa that carries a thesis from reported business fundamentals and market expectations through valuation, uncertainty, position sizing, and portfolio impact.",
+    blocks:[
+      ["Case Study","Visa (NYSE: V), using FY2023-FY2025 reported financials as the historical foundation while keeping investor assumptions explicitly separate."],
+      ["Decision Framework","Maps business drivers into normalized free cash flow, reverse-DCF embedded expectations, bull/base/bear scenarios, probability-weighted return distributions, downside analysis, position sizing, and marginal portfolio-risk impact."],
+      ["Evidence Produced","Tests whether a valuation gap survives scenario probabilities and downside states, then translates the resulting asymmetry into a position-size decision rather than stopping at an estimated intrinsic value."],
+      ["Research Discipline","Market price is a runtime input rather than a hard-coded quote. Historical figures are separated from forecast assumptions, and the framework includes an explicit checklist of disconfirming evidence that would require the thesis or position size to change."]
+    ],
+    methods:"Fundamental Research / Reverse DCF / Scenario Valuation / Probability-Weighted Returns / Position Sizing / Portfolio Risk",
+    github:"https://github.com/Bhawini08/narrative-to-position"
+  },
+  engine: {
+    category:"Systematic Research",
+    title:"Portfolio Decision Engine",
+    intro:"An end-to-end systematic research engine built around one institutional question: a signal changed - should the portfolio trade, by how much, at what expected cost, and what ultimately drove the resulting P&L?",
+    blocks:[
+      ["Decision Question","How do signal strength, portfolio constraints, implementation costs, and risk controls interact between a research signal and the P&L ultimately realized by the portfolio?"],
+      ["System Architecture","Connects lagged signal formation, expected-return mapping, covariance estimation, constrained optimization, execution costs, risk controls, realized performance, and attribution in one reproducible pipeline."],
+      ["Evidence Produced","Generates strategy and benchmark returns, portfolio weights, signal history, a trade blotter, expected execution costs, asset-level return contribution, turnover, drawdowns, risk diagnostics, and a decision log at every rebalance."],
+      ["Implementation Discipline","Tests 12-1 cross-sectional momentum, six-month trend, and inverse-volatility defensive signals using only prior information. Execution assumptions separate linear spread/slippage from nonlinear impact and are explicitly treated as stylized rather than an order-book simulation."]
+    ],
+    methods:"Python / Signal Research / Portfolio Optimization / Backtesting / Transaction Costs / Risk Controls / Performance Attribution",
+    github:"https://github.com/Bhawini08/portfolio-decision-engine"
+  }
+};
+
+const projectPanel = document.getElementById("projectPanel");
+document.querySelectorAll("[data-project]").forEach(card=>{
+  card.addEventListener("click",()=>{\n    document.querySelectorAll("[data-project]").forEach(x=>x.setAttribute("aria-expanded","false"));\n    card.setAttribute("aria-expanded","true");
+    const d=projectData[card.dataset.project];
+    projectPanel.innerHTML = `
+      <div class="project-detail-head">
+        <div>
+          <div class="eyebrow">${d.category}</div>
+          <h3>${d.title}</h3>
+        </div>
+        <p>${d.intro}</p>
+      </div>
+      <div class="project-detail-grid">
+        ${d.blocks.map(b=>`<div class="project-detail-block"><h4>${b[0]}</h4><p>${b[1]}</p></div>`).join("")}
+      </div>
+      <div class="project-detail-footer">
+        <div class="project-methods">Skills & Methods · ${d.methods}</div>
+        <a class="github-project-link" href="${d.github}" target="_blank" rel="noopener">View on GitHub ↗</a>
+      </div>
+      <button class="close-project" type="button">Close project</button>`;
+    projectPanel.classList.add("active");
+    projectPanel.querySelector(".close-project").onclick=()=>{ projectPanel.classList.remove("active"); card.setAttribute("aria-expanded","false"); card.focus(); };
+    projectPanel.scrollIntoView({behavior:"smooth",block:"nearest"});
+  });
+});
+</script>
 </body>
 </html>
